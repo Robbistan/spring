@@ -75,14 +75,14 @@ public class AppController {
         String res = "";
         String text = doQuery(keyword);
         System.out.println(text.replace("\n",""));
-        Pattern title = Pattern.compile("<a href=\"(/world-records/[0-9a-z\\-]+)\">(.*)</a></h3>        </header>");
+        Pattern title = Pattern.compile("<a href=\"(/world-records/[0-9a-z\\-]+)\">([a-zA-Z0-9 .,]+)</a></h3>        </header>");
         Pattern price = Pattern.compile("<span class=\"a-offscreen\">([0-9.$]+)</span><span aria-hidden=\"true\"><span class=\"a-price-symbol\">");
         String[] articles = (text.replace("\n","").split("</article><article"));
         for (String  a : articles) {
             System.out.println(a);
             Matcher m = title.matcher(a);
             if (m.find()) {
-                res += m.group(2);
+                res += m.group(2) + ",        ";
             }
 
         }
