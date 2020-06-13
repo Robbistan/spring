@@ -82,7 +82,7 @@ public class AppController {
             System.out.println(a);
             Matcher m = title.matcher(a);
             if (m.find()) {
-                res += m.group(1) + "->" + m.group(2);
+                res += m.group(2);
             }
 
         }
