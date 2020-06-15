@@ -26,7 +26,7 @@ public class AppController {
         return "Hello";
     }
 
-    @RequestMapping(value = "/app",method = RequestMethod.POST)
+    @RequestMapping(value = "/app/mountaneering",method = RequestMethod.POST)
     public String postBot(@RequestBody Map<String,Object> webhook) throws IOException {
         System.out.println(webhook);
         String response = "{\"fulfillmentText\": \"\",\n" +
@@ -48,8 +48,6 @@ public class AppController {
             }
         }
 
-        ;
-        System.out.println(response);
         return response;
     }
 
@@ -77,7 +75,7 @@ public class AppController {
         String text = doQuery(keyword);
 //        System.out.println(text.replace("\n",""));
         Pattern title = Pattern.compile("<a href=\"(/world-records/[0-9a-z\\-]+)\">([a-zA-Z0-9 .,]+)</a></h3>        </header>");
-        Pattern price = Pattern.compile("<span class=\"a-offscreen\">([0-9.$]+)</span><span aria-hidden=\"true\"><span class=\"a-price-symbol\">");
+//      Pattern price = Pattern.compile("<span class=\"a-offscreen\">([0-9.$]+)</span><span aria-hidden=\"true\"><span class=\"a-price-symbol\">");
         String[] articles = (text.replace("\n","").split("</article><article"));
         for (String  a : articles) {
             System.out.println(a);
