@@ -26,7 +26,7 @@ public class AppController {
         return "Hello";
     }
 
-    @RequestMapping(value = "/app/mountaneering",method = RequestMethod.POST)
+    @RequestMapping(value = "/app",method = RequestMethod.POST)
     public String postBot(@RequestBody Map<String,Object> webhook) throws IOException {
         System.out.println(webhook);
         String response = "{\"fulfillmentText\": \"\",\n" +
