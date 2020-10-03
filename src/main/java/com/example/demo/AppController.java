@@ -14,7 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Spring Boot Hello案例
+ * Spring Boot Hello
  *
  * Created by bysocket on 26/09/2017.
  */
