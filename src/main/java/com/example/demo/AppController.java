@@ -30,7 +30,7 @@ public class AppController {
     public String postBot(@RequestBody Map<String,Object> webhook) throws IOException {
         System.out.println(webhook);
         String response = "{\"fulfillmentText\": \"\",\n" +
-                "     \"source\": \"dad jokes\"\n" +
+                "     \"source\": \"\"\n" +
                 "    }";
         if (webhook.get("queryResult") != null){
             Map<String, Object> query =  ((Map<String, Object>)webhook.get("queryResult"));
@@ -40,7 +40,7 @@ public class AppController {
                     String subject =  ((String)parameters.get("subject"));
                     if ((subject != null) && !(subject.equals(""))) {
                         response = "{\"fulfillmentText\": \"" + process(subject) + "\",\n" +
-                                "     \"source\": \"dad jokes\"\n" +
+                                "     \"source\": \"\"\n" +
                                 "    }";
 
                     }
